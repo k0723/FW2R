@@ -1,5 +1,7 @@
 # app/main.py
 from fastapi import FastAPI, Request
+from routes.user import user_router
+from database.database import Base, engine
 from fastapi.middleware.cors import CORSMiddleware
 import subprocess
 
@@ -13,8 +15,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 라우트 등록
+# 데이터베이스 초기화
+Base.metadata.create_all(bind=engine)
 
+# 라우트 등록
+app.include_router(user_router, prefix="/api/users", tags=["Users"])
+# React 앱 빌드
 @app.get("/")
 def root():
     return {"message": "FastAPI backend is running."}
