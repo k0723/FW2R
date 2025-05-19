@@ -1,0 +1,28 @@
+# 🔒 Python 백엔드 관련
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+.env
+venv/
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/.mypy_cache/
+backend/.pytest_cache/
+
+# 🔒 Node.js 프론트엔드 관련
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# 🔒 IDE/에디터 관련
+.vscode/
+*.swp
+.DS_Store
+
+# 🔒 기타
+*.bak
+*.tmp
+*.orig
